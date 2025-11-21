@@ -78,25 +78,28 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Subtle Background */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-50 via-white to-white" />
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+      {/* Decorative Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-gradient-to-br from-pink-200/40 to-purple-200/40 blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-gradient-to-br from-blue-200/40 to-purple-200/40 blur-3xl" />
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-sm">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8 lg:px-12">
-          <div className="flex h-14 items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="text-2xl">📝</div>
-              <span className="text-base font-semibold text-gray-900">
+      <header className="sticky top-0 z-50 border-b border-white/50 bg-white/70 backdrop-blur-xl">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-pink-400 to-purple-500 text-xl shadow-lg shadow-purple-200/50">
+                ✨
+              </div>
+              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-lg font-bold text-transparent">
                 Notion Workshop
               </span>
             </div>
             <a
               href="/registrations"
-              className="inline-flex items-center gap-1.5 rounded-md bg-gray-900 px-3.5 py-1.5 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+              className="rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-5 py-2 text-sm font-medium text-white shadow-md shadow-purple-300/50 transition-all hover:shadow-lg hover:shadow-purple-300/60"
             >
               Dashboard
             </a>
@@ -104,22 +107,22 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-6 sm:px-8 lg:px-12">
+      <main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Success/Error Messages */}
         <AnimatePresence mode="wait">
           {submitStatus === 'success' && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="mt-6 rounded-lg border border-green-200 bg-green-50 p-4"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="mt-8 rounded-2xl bg-gradient-to-r from-green-50 to-emerald-50 p-6 shadow-lg shadow-green-100"
             >
-              <div className="flex gap-3">
-                <span className="text-xl">✅</span>
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">💚</span>
                 <div>
-                  <p className="font-medium text-green-900">Pendaftaran Berhasil!</p>
+                  <p className="font-semibold text-green-900">Pendaftaran Berhasil!</p>
                   <p className="mt-1 text-sm text-green-700">
-                    Terima kasih sudah mendaftar. Kami akan menghubungi Anda segera melalui email atau WhatsApp.
+                    Terima kasih sudah mendaftar. Kami akan menghubungi Anda segera! ✨
                   </p>
                 </div>
               </div>
@@ -128,17 +131,17 @@ export default function Home() {
 
           {submitStatus === 'error' && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="mt-6 rounded-lg border border-red-200 bg-red-50 p-4"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="mt-8 rounded-2xl bg-gradient-to-r from-red-50 to-pink-50 p-6 shadow-lg shadow-red-100"
             >
-              <div className="flex gap-3">
-                <span className="text-xl">❌</span>
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">💔</span>
                 <div>
-                  <p className="font-medium text-red-900">Terjadi Kesalahan</p>
+                  <p className="font-semibold text-red-900">Oops! Ada Kesalahan</p>
                   <p className="mt-1 text-sm text-red-700">
-                    Mohon maaf, ada kesalahan saat mengirim data. Silakan coba lagi.
+                    Mohon maaf, silakan coba lagi ya! 🙏
                   </p>
                 </div>
               </div>
@@ -147,115 +150,176 @@ export default function Home() {
         </AnimatePresence>
 
         {/* Hero Section */}
-        <div className="py-16 lg:py-20">
-          <div className="mb-4">
-            <span className="inline-flex items-center gap-2 rounded-md bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
-              Workshop Besok
+        <div className="py-16 text-center lg:py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-100 to-purple-100 px-4 py-2 text-sm font-semibold text-purple-700 shadow-md">
+              <motion.span
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="h-2 w-2 rounded-full bg-purple-500"
+              />
+              Workshop Besok Pagi ☀️
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            Notion Workshop
-          </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mb-6 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-4xl font-black tracking-tight text-transparent sm:text-5xl lg:text-6xl"
+          >
+            Notion Workshop ✨
+          </motion.h1>
 
-          <p className="mb-2 text-xl font-medium text-gray-700 sm:text-2xl">
-            Belajar Basic untuk Pemula
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-4 text-2xl font-bold text-gray-700 sm:text-3xl"
+          >
+            Belajar Basic untuk Pemula 🌸
+          </motion.p>
 
-          <p className="max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg">
-            Belajar Notion dari nol! Workshop ini dirancang khusus untuk pemula yang ingin memulai perjalanan produktivitas dengan Notion. Pelajari dasar-dasar dan mulai mengorganisir hidup Anda dengan lebih baik.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg"
+          >
+            Belajar Notion dari nol! Workshop ini dirancang khusus untuk pemula yang ingin memulai perjalanan produktivitas dengan Notion.
+            Pelajari dasar-dasar dan mulai mengorganisir hidup Anda dengan lebih baik! 💖
+          </motion.p>
         </div>
 
-        {/* Banner - Removed for cleaner Notion-style */}
-
         {/* Event Details */}
-        <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:mb-20">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 transition-shadow hover:shadow-md">
-            <div className="mb-4 flex items-center gap-2">
-              <span className="text-2xl">📅</span>
-              <h3 className="text-base font-semibold text-gray-900">Jadwal</h3>
+        <div className="mb-16 grid gap-6 sm:grid-cols-2 lg:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02 }}
+            className="rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-6 shadow-lg shadow-pink-100 transition-all"
+          >
+            <div className="mb-5 text-center">
+              <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 to-rose-500 text-2xl shadow-lg">
+                📅
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">Jadwal Workshop</h3>
             </div>
-            <div className="space-y-3">
-              <div className="flex items-start justify-between">
-                <span className="text-sm text-gray-500">Tanggal</span>
-                <span className="text-sm font-medium text-gray-900">Besok</span>
+            <div className="space-y-3 text-center">
+              <div>
+                <p className="text-xs font-medium text-gray-500">Tanggal</p>
+                <p className="text-sm font-semibold text-gray-900">Besok Pagi</p>
               </div>
-              <div className="flex items-start justify-between">
-                <span className="text-sm text-gray-500">Waktu</span>
-                <span className="text-sm font-medium text-gray-900">10:00 Pagi</span>
+              <div>
+                <p className="text-xs font-medium text-gray-500">Waktu</p>
+                <p className="text-sm font-semibold text-gray-900">10:00 AM</p>
               </div>
-              <div className="flex items-start justify-between">
-                <span className="text-sm text-gray-500">Durasi</span>
-                <span className="text-sm font-medium text-gray-900">2 Jam</span>
+              <div>
+                <p className="text-xs font-medium text-gray-500">Durasi</p>
+                <p className="text-sm font-semibold text-gray-900">2 Jam</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="rounded-lg border border-gray-200 bg-white p-6 transition-shadow hover:shadow-md">
-            <div className="mb-4 flex items-center gap-2">
-              <span className="text-2xl">📍</span>
-              <h3 className="text-base font-semibold text-gray-900">Lokasi</h3>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            whileHover={{ scale: 1.02 }}
+            className="rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 p-6 shadow-lg shadow-purple-100 transition-all"
+          >
+            <div className="mb-5 text-center">
+              <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-400 to-blue-500 text-2xl shadow-lg">
+                📍
+              </div>
+              <h3 className="text-lg font-bold text-gray-800">Detail Acara</h3>
             </div>
-            <div className="space-y-3">
-              <div className="flex items-start justify-between">
-                <span className="text-sm text-gray-500">Format</span>
-                <span className="text-sm font-medium text-gray-900">Online</span>
+            <div className="space-y-3 text-center">
+              <div>
+                <p className="text-xs font-medium text-gray-500">Format</p>
+                <p className="text-sm font-semibold text-gray-900">Online</p>
               </div>
-              <div className="flex items-start justify-between">
-                <span className="text-sm text-gray-500">Platform</span>
-                <span className="text-sm font-medium text-gray-900">Zoom</span>
+              <div>
+                <p className="text-xs font-medium text-gray-500">Platform</p>
+                <p className="text-sm font-semibold text-gray-900">Zoom</p>
               </div>
-              <div className="flex items-start justify-between">
-                <span className="text-sm text-gray-500">Biaya</span>
-                <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-0.5 text-sm font-medium text-green-700">Gratis!</span>
+              <div>
+                <p className="text-xs font-medium text-gray-500">Biaya</p>
+                <span className="inline-flex items-center rounded-full bg-gradient-to-r from-green-400 to-emerald-500 px-3 py-1 text-sm font-bold text-white shadow-md">
+                  Gratis! 🎉
+                </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* What You'll Learn */}
-        <div className="mb-16 lg:mb-20">
-          <h2 className="mb-6 text-2xl font-bold text-gray-900">
-            Apa yang Akan Dipelajari
-          </h2>
-          <div className="space-y-3">
+        <div className="mb-16 text-center lg:mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-8 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl"
+          >
+            Apa yang Akan Dipelajari 📚
+          </motion.h2>
+          <div className="grid gap-5 sm:grid-cols-2">
             {[
-              { icon: '📝', title: 'Pengenalan Notion', desc: 'Memahami interface dan fitur dasar Notion untuk pemula' },
-              { icon: '🧱', title: 'Blocks & Pages', desc: 'Cara membuat dan mengatur pages serta berbagai jenis blocks' },
-              { icon: '✅', title: 'To-Do Lists', desc: 'Membuat daftar tugas sederhana untuk produktivitas harian' },
-              { icon: '📚', title: 'Organize Notes', desc: 'Tips mengorganisir catatan dan dokumen dengan mudah' },
+              { icon: '📝', color: 'from-pink-400 to-rose-500', bg: 'from-pink-50 to-rose-50', title: 'Pengenalan Notion', desc: 'Memahami interface dan fitur dasar Notion untuk pemula' },
+              { icon: '🧱', color: 'from-purple-400 to-violet-500', bg: 'from-purple-50 to-violet-50', title: 'Blocks & Pages', desc: 'Cara membuat dan mengatur pages serta berbagai jenis blocks' },
+              { icon: '✅', color: 'from-blue-400 to-cyan-500', bg: 'from-blue-50 to-cyan-50', title: 'To-Do Lists', desc: 'Membuat daftar tugas sederhana untuk produktivitas harian' },
+              { icon: '📚', color: 'from-emerald-400 to-teal-500', bg: 'from-emerald-50 to-teal-50', title: 'Organize Notes', desc: 'Tips mengorganisir catatan dan dokumen dengan mudah' },
             ].map((item, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="flex gap-4 rounded-lg border border-gray-200 bg-white p-5 transition-all hover:border-gray-300 hover:shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className={`rounded-2xl bg-gradient-to-br ${item.bg} p-6 shadow-lg transition-all`}
               >
-                <div className="flex-shrink-0 text-2xl">{item.icon}</div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="mb-1 font-semibold text-gray-900">{item.title}</h4>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
+                <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${item.color} text-2xl shadow-lg`}>
+                  {item.icon}
                 </div>
-              </div>
+                <h4 className="mb-2 font-bold text-gray-900">{item.title}</h4>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Registration Form */}
-        <div className="pb-16 lg:pb-20">
-          <div className="mb-8">
-            <h2 className="mb-2 text-2xl font-bold text-gray-900">Daftar Sekarang</h2>
-            <p className="text-base text-gray-600">Isi form di bawah untuk mengamankan tempat Anda</p>
-          </div>
+        <div className="pb-16 text-center lg:pb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
+            <h2 className="mb-3 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
+              Daftar Sekarang! 💫
+            </h2>
+            <p className="text-base text-gray-600">Isi form di bawah untuk mengamankan tempat Anda ✨</p>
+          </motion.div>
 
-          <form
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="space-y-5 rounded-lg border border-gray-200 bg-white p-6 sm:p-8"
+            className="mx-auto max-w-2xl space-y-5 rounded-3xl bg-white/80 p-8 shadow-2xl shadow-purple-100 backdrop-blur-sm sm:p-10"
           >
             {/* Nama */}
-            <div>
-              <label htmlFor="nama" className="mb-1.5 block text-sm font-medium text-gray-700">
-                Nama Lengkap <span className="text-red-500">*</span>
+            <div className="text-left">
+              <label htmlFor="nama" className="mb-2 block text-sm font-semibold text-gray-700">
+                Nama Lengkap 🌸 <span className="text-pink-500">*</span>
               </label>
               <input
                 type="text"
@@ -264,16 +328,16 @@ export default function Home() {
                 required
                 value={formData.nama}
                 onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                 placeholder="Nama Anda"
               />
             </div>
 
             {/* Email & WhatsApp */}
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-5 text-left sm:grid-cols-2">
               <div>
-                <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-gray-700">
-                  Email <span className="text-red-500">*</span>
+                <label htmlFor="email" className="mb-2 block text-sm font-semibold text-gray-700">
+                  Email 💌 <span className="text-pink-500">*</span>
                 </label>
                 <input
                   type="email"
@@ -282,14 +346,14 @@ export default function Home() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                   placeholder="email@contoh.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="whatsapp" className="mb-1.5 block text-sm font-medium text-gray-700">
-                  WhatsApp <span className="text-red-500">*</span>
+                <label htmlFor="whatsapp" className="mb-2 block text-sm font-semibold text-gray-700">
+                  WhatsApp 📱 <span className="text-pink-500">*</span>
                 </label>
                 <input
                   type="tel"
@@ -298,16 +362,16 @@ export default function Home() {
                   required
                   value={formData.whatsapp}
                   onChange={handleChange}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                   placeholder="08123456789"
                 />
               </div>
             </div>
 
             {/* Institusi */}
-            <div>
-              <label htmlFor="institusi" className="mb-1.5 block text-sm font-medium text-gray-700">
-                Institusi / Perusahaan <span className="text-red-500">*</span>
+            <div className="text-left">
+              <label htmlFor="institusi" className="mb-2 block text-sm font-semibold text-gray-700">
+                Institusi / Perusahaan 🏫 <span className="text-pink-500">*</span>
               </label>
               <input
                 type="text"
@@ -316,15 +380,15 @@ export default function Home() {
                 required
                 value={formData.institusi}
                 onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                 placeholder="Universitas, sekolah, atau nama perusahaan"
               />
             </div>
 
             {/* Kebutuhan */}
-            <div>
-              <label htmlFor="kebutuhan" className="mb-1.5 block text-sm font-medium text-gray-700">
-                Mengapa ingin ikut workshop ini? <span className="text-red-500">*</span>
+            <div className="text-left">
+              <label htmlFor="kebutuhan" className="mb-2 block text-sm font-semibold text-gray-700">
+                Mengapa ingin ikut workshop ini? 💭 <span className="text-pink-500">*</span>
               </label>
               <textarea
                 id="kebutuhan"
@@ -333,15 +397,15 @@ export default function Home() {
                 value={formData.kebutuhan}
                 onChange={handleChange}
                 rows={4}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                 placeholder="Ceritakan apa yang ingin Anda pelajari atau capai..."
               />
             </div>
 
             {/* Saran Topik */}
-            <div>
-              <label htmlFor="saranTopik" className="mb-1.5 block text-sm font-medium text-gray-700">
-                Saran Topik <span className="text-gray-400">(Opsional)</span>
+            <div className="text-left">
+              <label htmlFor="saranTopik" className="mb-2 block text-sm font-semibold text-gray-700">
+                Saran Topik ✏️ <span className="text-gray-400">(Opsional)</span>
               </label>
               <textarea
                 id="saranTopik"
@@ -349,21 +413,23 @@ export default function Home() {
                 value={formData.saranTopik}
                 onChange={handleChange}
                 rows={3}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                 placeholder="Topik apa yang ingin Anda pelajari?"
               />
             </div>
 
             {/* Submit Button */}
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isSubmitting}
-              className="w-full rounded-md bg-blue-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="mt-6 w-full rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-purple-300/50 transition-all hover:shadow-xl hover:shadow-purple-300/60 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2">
                   <svg
-                    className="h-4 w-4 animate-spin"
+                    className="h-5 w-5 animate-spin"
                     viewBox="0 0 24 24"
                   >
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
@@ -372,23 +438,24 @@ export default function Home() {
                   Mengirim...
                 </span>
               ) : (
-                'Daftar Workshop'
+                '✨ Daftar Workshop Sekarang! ✨'
               )}
-            </button>
-          </form>
+            </motion.button>
+          </motion.form>
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-200 py-8">
-          <p className="text-sm text-gray-500">
-            Ada pertanyaan? Hubungi kami di{' '}
+        <div className="border-t border-purple-100 py-10 text-center">
+          <p className="text-sm text-gray-600">
+            Ada pertanyaan? Hubungi kami di 💌{' '}
             <a
               href="mailto:nadya@notion-workshop.com"
-              className="text-blue-600 hover:underline"
+              className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text font-semibold text-transparent hover:underline"
             >
               nadya@notion-workshop.com
             </a>
           </p>
+          <p className="mt-3 text-xs text-gray-400">Made with 💖 by Nadya</p>
         </div>
       </main>
     </div>
