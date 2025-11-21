@@ -102,3 +102,18 @@ body {
   background-color: #fce7f3; /* pink-100 */
   color: #831843; /* pink-900 */
 }
+
+/* Custom Spacing for 8px Grid System */
+.pt-15 { padding-top: 60px; }
+.pb-15 { padding-bottom: 60px; }
+.pt-25 { padding-top: 100px; }
+.py-18 { padding-top: 72px; padding-bottom: 72px; }
+.py-hero { padding-top: 80px; padding-bottom: 60px; }
+
+/* Safe Area Insets for Mobile */
+@supports (padding: max(0px)) {
+  .safe-px {
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+}
