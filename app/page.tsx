@@ -150,7 +150,7 @@ export default function Home() {
         </AnimatePresence>
 
         {/* Hero Section */}
-        <div className="py-16 text-center lg:py-20">
+        <div className="py-20 text-center lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -196,21 +196,21 @@ export default function Home() {
         </div>
 
         {/* Event Details */}
-        <div className="mb-16 grid gap-6 sm:grid-cols-2 lg:mb-20">
+        <div className="mb-24 grid gap-7 sm:grid-cols-2 lg:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
-            className="rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-6 shadow-lg shadow-pink-100 transition-all"
+            className="rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 p-8 shadow-lg shadow-pink-100 transition-all"
           >
-            <div className="mb-5 text-center">
-              <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 to-rose-500 text-2xl shadow-lg">
+            <div className="mb-6 text-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 to-rose-500 text-2xl shadow-lg">
                 📅
               </div>
               <h3 className="text-lg font-bold text-gray-800">Jadwal Workshop</h3>
             </div>
-            <div className="space-y-3 text-center">
+            <div className="space-y-4 text-center">
               <div>
                 <p className="text-xs font-medium text-gray-500">Tanggal</p>
                 <p className="text-sm font-semibold text-gray-900">Besok Pagi</p>
@@ -232,15 +232,15 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             whileHover={{ scale: 1.02 }}
-            className="rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 p-6 shadow-lg shadow-purple-100 transition-all"
+            className="rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 p-8 shadow-lg shadow-purple-100 transition-all"
           >
-            <div className="mb-5 text-center">
-              <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-400 to-blue-500 text-2xl shadow-lg">
+            <div className="mb-6 text-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-400 to-blue-500 text-2xl shadow-lg">
                 📍
               </div>
               <h3 className="text-lg font-bold text-gray-800">Detail Acara</h3>
             </div>
-            <div className="space-y-3 text-center">
+            <div className="space-y-4 text-center">
               <div>
                 <p className="text-xs font-medium text-gray-500">Format</p>
                 <p className="text-sm font-semibold text-gray-900">Online</p>
@@ -260,16 +260,16 @@ export default function Home() {
         </div>
 
         {/* What You'll Learn */}
-        <div className="mb-16 text-center lg:mb-20">
+        <div className="mb-24 text-center lg:mb-32">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-8 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl"
+            className="mb-10 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl"
           >
             Apa yang Akan Dipelajari 📚
           </motion.h2>
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-7 sm:grid-cols-2">
             {[
               { icon: '📝', color: 'from-pink-400 to-rose-500', bg: 'from-pink-50 to-rose-50', title: 'Pengenalan Notion', desc: 'Memahami interface dan fitur dasar Notion untuk pemula' },
               { icon: '🧱', color: 'from-purple-400 to-violet-500', bg: 'from-purple-50 to-violet-50', title: 'Blocks & Pages', desc: 'Cara membuat dan mengatur pages serta berbagai jenis blocks' },
@@ -283,12 +283,12 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className={`rounded-2xl bg-gradient-to-br ${item.bg} p-6 shadow-lg transition-all`}
+                className={`rounded-2xl bg-gradient-to-br ${item.bg} p-8 shadow-lg transition-all`}
               >
-                <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${item.color} text-2xl shadow-lg`}>
+                <div className={`mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${item.color} text-2xl shadow-lg`}>
                   {item.icon}
                 </div>
-                <h4 className="mb-2 font-bold text-gray-900">{item.title}</h4>
+                <h4 className="mb-3 font-bold text-gray-900">{item.title}</h4>
                 <p className="text-sm text-gray-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -296,14 +296,14 @@ export default function Home() {
         </div>
 
         {/* Registration Form */}
-        <div className="pb-16 text-center lg:pb-20">
+        <div className="pb-24 text-center lg:pb-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-8"
+            className="mb-10"
           >
-            <h2 className="mb-3 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
+            <h2 className="mb-4 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
               Daftar Sekarang! 💫
             </h2>
             <p className="text-base text-gray-600">Isi form di bawah untuk mengamankan tempat Anda ✨</p>
@@ -314,11 +314,11 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="mx-auto max-w-2xl space-y-5 rounded-3xl bg-white/80 p-8 shadow-2xl shadow-purple-100 backdrop-blur-sm sm:p-10"
+            className="mx-auto max-w-2xl space-y-7 rounded-3xl bg-white/80 p-8 shadow-2xl shadow-purple-100 backdrop-blur-sm sm:p-12"
           >
             {/* Nama */}
-            <div className="text-left">
-              <label htmlFor="nama" className="mb-2 block text-sm font-semibold text-gray-700">
+            <div className="text-center">
+              <label htmlFor="nama" className="mb-3 block text-sm font-semibold text-gray-700">
                 Nama Lengkap 🌸 <span className="text-pink-500">*</span>
               </label>
               <input
@@ -328,15 +328,15 @@ export default function Home() {
                 required
                 value={formData.nama}
                 onChange={handleChange}
-                className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
-                placeholder="Nama Anda"
+                className="w-full rounded-xl border-2 border-purple-200 bg-white px-5 py-4 text-center text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
+                placeholder="Masukkan nama lengkap Anda"
               />
             </div>
 
             {/* Email & WhatsApp */}
-            <div className="grid gap-5 text-left sm:grid-cols-2">
+            <div className="grid gap-7 text-center sm:grid-cols-2">
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-semibold text-gray-700">
+                <label htmlFor="email" className="mb-3 block text-sm font-semibold text-gray-700">
                   Email 💌 <span className="text-pink-500">*</span>
                 </label>
                 <input
@@ -346,13 +346,13 @@ export default function Home() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
-                  placeholder="email@contoh.com"
+                  className="w-full rounded-xl border-2 border-purple-200 bg-white px-5 py-4 text-center text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
+                  placeholder="email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="whatsapp" className="mb-2 block text-sm font-semibold text-gray-700">
+                <label htmlFor="whatsapp" className="mb-3 block text-sm font-semibold text-gray-700">
                   WhatsApp 📱 <span className="text-pink-500">*</span>
                 </label>
                 <input
@@ -362,15 +362,15 @@ export default function Home() {
                   required
                   value={formData.whatsapp}
                   onChange={handleChange}
-                  className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
+                  className="w-full rounded-xl border-2 border-purple-200 bg-white px-5 py-4 text-center text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                   placeholder="08123456789"
                 />
               </div>
             </div>
 
             {/* Institusi */}
-            <div className="text-left">
-              <label htmlFor="institusi" className="mb-2 block text-sm font-semibold text-gray-700">
+            <div className="text-center">
+              <label htmlFor="institusi" className="mb-3 block text-sm font-semibold text-gray-700">
                 Institusi / Perusahaan 🏫 <span className="text-pink-500">*</span>
               </label>
               <input
@@ -380,14 +380,14 @@ export default function Home() {
                 required
                 value={formData.institusi}
                 onChange={handleChange}
-                className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
-                placeholder="Universitas, sekolah, atau nama perusahaan"
+                className="w-full rounded-xl border-2 border-purple-200 bg-white px-5 py-4 text-center text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
+                placeholder="Nama universitas atau perusahaan"
               />
             </div>
 
             {/* Kebutuhan */}
-            <div className="text-left">
-              <label htmlFor="kebutuhan" className="mb-2 block text-sm font-semibold text-gray-700">
+            <div className="text-center">
+              <label htmlFor="kebutuhan" className="mb-3 block text-sm font-semibold text-gray-700">
                 Mengapa ingin ikut workshop ini? 💭 <span className="text-pink-500">*</span>
               </label>
               <textarea
@@ -397,14 +397,14 @@ export default function Home() {
                 value={formData.kebutuhan}
                 onChange={handleChange}
                 rows={4}
-                className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
-                placeholder="Ceritakan apa yang ingin Anda pelajari atau capai..."
+                className="w-full rounded-xl border-2 border-purple-200 bg-white px-5 py-4 text-center text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
+                placeholder="Ceritakan tujuan dan harapan Anda mengikuti workshop ini"
               />
             </div>
 
             {/* Saran Topik */}
-            <div className="text-left">
-              <label htmlFor="saranTopik" className="mb-2 block text-sm font-semibold text-gray-700">
+            <div className="text-center">
+              <label htmlFor="saranTopik" className="mb-3 block text-sm font-semibold text-gray-700">
                 Saran Topik ✏️ <span className="text-gray-400">(Opsional)</span>
               </label>
               <textarea
@@ -413,8 +413,8 @@ export default function Home() {
                 value={formData.saranTopik}
                 onChange={handleChange}
                 rows={3}
-                className="w-full rounded-xl border-2 border-purple-200 bg-white px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
-                placeholder="Topik apa yang ingin Anda pelajari?"
+                className="w-full rounded-xl border-2 border-purple-200 bg-white px-5 py-4 text-center text-gray-900 transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
+                placeholder="Topik tertentu yang ingin dipelajari"
               />
             </div>
 
@@ -424,12 +424,12 @@ export default function Home() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isSubmitting}
-              className="mt-6 w-full rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-purple-300/50 transition-all hover:shadow-xl hover:shadow-purple-300/60 disabled:cursor-not-allowed disabled:opacity-50"
+              className="mt-8 w-full rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-10 py-6 text-lg font-bold text-white shadow-lg shadow-purple-300/50 transition-all hover:shadow-xl hover:shadow-purple-300/60 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2">
                   <svg
-                    className="h-5 w-5 animate-spin"
+                    className="h-6 w-6 animate-spin"
                     viewBox="0 0 24 24"
                   >
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
@@ -445,7 +445,7 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-purple-100 py-10 text-center">
+        <div className="border-t border-purple-100 py-12 text-center">
           <p className="text-sm text-gray-600">
             Ada pertanyaan? Hubungi kami di 💌{' '}
             <a
