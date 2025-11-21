@@ -46,23 +46,22 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50/30 via-purple-50/20 to-blue-50/30">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50/50 via-purple-50/30 to-blue-50/40">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-purple-100/50 bg-white/80 backdrop-blur-xl">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-12 lg:px-20">
-          <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 text-lg font-bold text-white shadow-sm">
+      <header className="sticky top-0 z-50 border-b border-purple-100/60 bg-white/85 backdrop-blur-xl shadow-sm">
+        <div className="mx-auto max-w-[1400px] px-8 md:px-16 lg:px-24">
+          <div className="flex h-20 items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500 via-purple-500 to-purple-600 text-xl font-bold text-white shadow-md shadow-purple-200/50">
                 N
               </div>
-              <span className="text-lg font-bold text-gray-900">
+              <span className="text-xl font-bold text-gray-900">
                 Notion Workshop
               </span>
             </div>
             <a
               href="/registrations"
-              className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-purple-700 active:scale-95"
-              style={{ minHeight: '44px' }}
+              className="rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-purple-200/50 transition-all hover:shadow-lg hover:shadow-purple-300/50 active:scale-95"
             >
               Dashboard
             </a>
@@ -70,7 +69,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-[1200px] safe-px px-6 md:px-12 lg:px-20">
+      <main className="mx-auto max-w-[1400px] safe-px px-8 md:px-16 lg:px-24">
         {/* Success/Error Messages */}
         <AnimatePresence mode="wait">
           {submitStatus === 'success' && (
@@ -116,15 +115,15 @@ export default function Home() {
           )}
         </AnimatePresence>
 
-        {/* Hero Section - 80px top, 60px bottom */}
-        <section className="py-hero md:py-hero text-center md:py-20 lg:py-hero">
-          <div className="mx-auto max-w-3xl px-5 md:px-10">
+        {/* Hero Section */}
+        <section className="py-24 md:py-28 lg:py-32 text-center">
+          <div className="mx-auto max-w-4xl px-6 md:px-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-4"
+              className="mb-6"
             >
-              <span className="inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-1.5 text-sm font-medium text-purple-700">
+              <span className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 px-5 py-2 text-sm font-semibold text-purple-700 shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-400 opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-purple-500"></span>
@@ -133,68 +132,65 @@ export default function Home() {
               </span>
             </motion.div>
 
-            {/* Judul - mb-6 (24px) ke subtitle */}
+            {/* Judul */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="mb-6 text-4xl font-black tracking-tight text-gray-900 sm:text-5xl lg:text-6xl"
+              className="mb-8 text-5xl font-black tracking-tight text-gray-900 sm:text-6xl lg:text-7xl"
             >
               Notion Workshop
             </motion.h1>
 
-            {/* Subtitle - mb-8 (32px) ke paragraph */}
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-8 text-xl font-semibold text-gray-700 sm:text-2xl"
+              className="mb-10 text-2xl font-semibold text-gray-700 sm:text-3xl"
             >
               Belajar Basic untuk Pemula
             </motion.p>
 
-            {/* Deskripsi - mb-16 (64px) ke section berikutnya */}
+            {/* Deskripsi */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mb-16 text-base leading-relaxed text-gray-600"
+              className="mb-20 text-lg leading-relaxed text-gray-600 max-w-2xl mx-auto"
             >
               Belajar Notion dari nol! Workshop ini dirancang khusus untuk pemula yang ingin memulai perjalanan produktivitas dengan Notion.
             </motion.p>
           </div>
         </section>
 
-        {/* Event Details - margin bottom 80px (mb-20) */}
-        <section className="mb-20 md:mb-20 lg:mb-20">
-          {/* Gap 32px horizontal (gap-8), stack on mobile */}
-          <div className="grid gap-8 md:grid-cols-2 md:gap-12">
+        {/* Event Details */}
+        <section className="mb-24 md:mb-28 lg:mb-32">
+          <div className="grid gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-gray-200 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-md"
-              style={{ padding: '32px' }} /* 32px all sides desktop */
+              className="rounded-3xl border border-pink-100 bg-gradient-to-br from-white to-pink-50/30 p-8 shadow-lg shadow-pink-100/50 transition-all hover:shadow-xl hover:shadow-pink-200/50 hover:border-pink-200"
             >
-              <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100 text-xl">
+              <div className="mb-6 flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-100 to-pink-200 text-2xl shadow-sm">
                   📅
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">Jadwal Workshop</h3>
+                <h3 className="text-xl font-bold text-gray-900">Jadwal Workshop</h3>
               </div>
-              {/* space-y-4 = 16px between rows */}
               <div className="space-y-4">
-                <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                  <span className="text-sm font-medium text-gray-600">Tanggal</span>
-                  <span className="text-sm font-semibold text-gray-900">Besok Pagi</span>
+                <div className="flex items-center justify-between rounded-xl bg-white px-5 py-4 shadow-sm">
+                  <span className="text-sm font-semibold text-gray-600">Tanggal</span>
+                  <span className="text-sm font-bold text-gray-900">Besok Pagi</span>
                 </div>
-                <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                  <span className="text-sm font-medium text-gray-600">Waktu</span>
-                  <span className="text-sm font-semibold text-gray-900">10:00 AM</span>
+                <div className="flex items-center justify-between rounded-xl bg-white px-5 py-4 shadow-sm">
+                  <span className="text-sm font-semibold text-gray-600">Waktu</span>
+                  <span className="text-sm font-bold text-gray-900">10:00 AM</span>
                 </div>
-                <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                  <span className="text-sm font-medium text-gray-600">Durasi</span>
-                  <span className="text-sm font-semibold text-gray-900">2 Jam</span>
+                <div className="flex items-center justify-between rounded-xl bg-white px-5 py-4 shadow-sm">
+                  <span className="text-sm font-semibold text-gray-600">Durasi</span>
+                  <span className="text-sm font-bold text-gray-900">2 Jam</span>
                 </div>
               </div>
             </motion.div>
@@ -204,28 +200,26 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="rounded-2xl border border-gray-200 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-md"
-              style={{ padding: '32px' }} /* 32px all sides desktop */
+              className="rounded-3xl border border-purple-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg shadow-purple-100/50 transition-all hover:shadow-xl hover:shadow-purple-200/50 hover:border-purple-200"
             >
-              <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 text-xl">
+              <div className="mb-6 flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 text-2xl shadow-sm">
                   📍
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">Detail Acara</h3>
+                <h3 className="text-xl font-bold text-gray-900">Detail Acara</h3>
               </div>
-              {/* space-y-4 = 16px between rows */}
               <div className="space-y-4">
-                <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                  <span className="text-sm font-medium text-gray-600">Format</span>
-                  <span className="text-sm font-semibold text-gray-900">Online</span>
+                <div className="flex items-center justify-between rounded-xl bg-white px-5 py-4 shadow-sm">
+                  <span className="text-sm font-semibold text-gray-600">Format</span>
+                  <span className="text-sm font-bold text-gray-900">Online</span>
                 </div>
-                <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                  <span className="text-sm font-medium text-gray-600">Platform</span>
-                  <span className="text-sm font-semibold text-gray-900">Zoom</span>
+                <div className="flex items-center justify-between rounded-xl bg-white px-5 py-4 shadow-sm">
+                  <span className="text-sm font-semibold text-gray-600">Platform</span>
+                  <span className="text-sm font-bold text-gray-900">Zoom</span>
                 </div>
-                <div className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                  <span className="text-sm font-medium text-gray-600">Biaya</span>
-                  <span className="inline-flex items-center rounded-md bg-green-100 px-2 py-0.5 text-sm font-semibold text-green-800">
+                <div className="flex items-center justify-between rounded-xl bg-white px-5 py-4 shadow-sm">
+                  <span className="text-sm font-semibold text-gray-600">Biaya</span>
+                  <span className="inline-flex items-center rounded-lg bg-gradient-to-r from-green-100 to-emerald-100 px-3 py-1.5 text-sm font-bold text-green-800 shadow-sm">
                     Gratis
                   </span>
                 </div>
@@ -234,25 +228,23 @@ export default function Home() {
           </div>
         </section>
 
-        {/* What You'll Learn - padding top 80px (pt-20), margin bottom 80px (mb-20) */}
-        <section className="mb-14 pt-14 md:mb-20 md:pt-20 lg:mb-20 lg:pt-20">
-          {/* Container padding 80px on desktop handled by main container */}
+        {/* What You'll Learn */}
+        <section className="mb-24 md:mb-28 lg:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12 text-center" /* 48px heading to grid */
+            className="mb-16 text-center"
           >
-            <h2 className="mb-3 text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">
               Apa yang Akan Dipelajari
             </h2>
-            <p className="text-base leading-relaxed text-gray-600">
+            <p className="text-lg leading-relaxed text-gray-600">
               Materi workshop yang akan dibahas
             </p>
           </motion.div>
 
-          {/* Grid gap: gap-x-8 gap-y-10 (32px horizontal, 40px vertical) */}
-          <div className="grid gap-x-6 gap-y-8 md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+          <div className="grid gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
             {learningItems.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -260,19 +252,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group rounded-2xl border border-gray-200 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all hover:border-purple-200 hover:shadow-md"
-                /* Card padding: 32px vertical, 24px horizontal on desktop, 20px on mobile */
-                style={{ padding: '32px' }}
+                className="group rounded-3xl border border-purple-100 bg-gradient-to-br from-white to-purple-50/20 p-8 shadow-lg shadow-purple-100/50 transition-all hover:border-purple-200 hover:shadow-xl hover:shadow-purple-200/50"
               >
-                {/* Icon to title: 20px (mb-5) */}
                 <div className="flex items-start gap-5">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-purple-100 to-pink-100 text-2xl">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 via-pink-100 to-purple-100 text-3xl shadow-sm">
                     {item.icon}
                   </div>
                   <div className="flex-1 text-left">
-                    {/* Title to description: 12px (mb-3) */}
-                    <h4 className="mb-3 text-lg font-bold text-gray-900">{item.title}</h4>
-                    <p className="text-sm leading-relaxed text-gray-600">{item.desc}</p>
+                    <h4 className="mb-3 text-xl font-bold text-gray-900">{item.title}</h4>
+                    <p className="text-base leading-relaxed text-gray-600">{item.desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -280,38 +268,33 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Registration Form - padding top 100px (pt-25), margin bottom 60px (pb-15) */}
-        <section className="pt-15 pb-15 md:pt-25 md:pb-15 lg:pt-25 lg:pb-15">
-          {/* Heading to CTA: 16px (mb-4), CTA to form: 40px (mb-10) */}
+        {/* Registration Form */}
+        <section className="py-24 md:py-28 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-10 text-center"
+            className="mb-16 text-center"
           >
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 sm:text-5xl">
               Daftar Sekarang
             </h2>
-            <p className="text-base leading-relaxed text-gray-600">
+            <p className="text-lg leading-relaxed text-gray-600">
               Isi form di bawah untuk mengamankan tempat Anda
             </p>
           </motion.div>
 
-          {/* Form container: max-w-xl (600px), padding 48px desktop, 24px mobile */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mx-auto max-w-xl rounded-2xl border border-gray-200 bg-gradient-to-br from-pink-50/40 to-purple-50/30 shadow-sm"
-            style={{ padding: '48px' }} /* 48px all sides on desktop */
+            className="mx-auto max-w-2xl rounded-3xl border border-purple-100 bg-gradient-to-br from-pink-50/50 via-white to-purple-50/50 p-10 md:p-12 shadow-xl shadow-purple-100/50"
           >
-            {/* Form fields gap: 24px (space-y-6) */}
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-7">
               {/* Nama */}
               <div>
-                {/* Label to input: 8px (mb-2) */}
-                <label htmlFor="nama" className="mb-2 block text-sm font-semibold text-gray-900">
-                  Nama Lengkap <span className="text-red-500">*</span>
+                <label htmlFor="nama" className="mb-3 block text-base font-bold text-gray-900">
+                  Nama Lengkap <span className="text-pink-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -320,18 +303,16 @@ export default function Home() {
                   required
                   value={formData.nama}
                   onChange={handleChange}
-                  /* py-4 px-5 = 16px vertical, 20px horizontal, min-h-14 = 56px */
-                  className="h-14 w-full rounded-lg border border-gray-300 bg-white px-5 py-4 text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                  className="h-16 w-full rounded-xl border-2 border-purple-200 bg-white px-6 py-4 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                   placeholder="Masukkan nama lengkap Anda"
-                  style={{ minHeight: '56px' }}
                 />
               </div>
 
               {/* Email & WhatsApp */}
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="grid gap-7 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-semibold text-gray-900">
-                    Email <span className="text-red-500">*</span>
+                  <label htmlFor="email" className="mb-3 block text-base font-bold text-gray-900">
+                    Email <span className="text-pink-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -340,15 +321,14 @@ export default function Home() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="h-14 w-full rounded-lg border border-gray-300 bg-white px-5 py-4 text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                    className="h-16 w-full rounded-xl border-2 border-purple-200 bg-white px-6 py-4 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                     placeholder="nama@example.com"
-                    style={{ minHeight: '56px' }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="whatsapp" className="mb-2 block text-sm font-semibold text-gray-900">
-                    WhatsApp <span className="text-red-500">*</span>
+                  <label htmlFor="whatsapp" className="mb-3 block text-base font-bold text-gray-900">
+                    WhatsApp <span className="text-pink-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -357,17 +337,16 @@ export default function Home() {
                     required
                     value={formData.whatsapp}
                     onChange={handleChange}
-                    className="h-14 w-full rounded-lg border border-gray-300 bg-white px-5 py-4 text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                    className="h-16 w-full rounded-xl border-2 border-purple-200 bg-white px-6 py-4 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                     placeholder="08123456789"
-                    style={{ minHeight: '56px' }}
                   />
                 </div>
               </div>
 
               {/* Institusi */}
               <div>
-                <label htmlFor="institusi" className="mb-2 block text-sm font-semibold text-gray-900">
-                  Institusi / Perusahaan <span className="text-red-500">*</span>
+                <label htmlFor="institusi" className="mb-3 block text-base font-bold text-gray-900">
+                  Institusi / Perusahaan <span className="text-pink-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -376,16 +355,15 @@ export default function Home() {
                   required
                   value={formData.institusi}
                   onChange={handleChange}
-                  className="h-14 w-full rounded-lg border border-gray-300 bg-white px-5 py-4 text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                  className="h-16 w-full rounded-xl border-2 border-purple-200 bg-white px-6 py-4 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100"
                   placeholder="Nama universitas atau perusahaan"
-                  style={{ minHeight: '56px' }}
                 />
               </div>
 
-              {/* Kebutuhan - min height 120px */}
+              {/* Kebutuhan */}
               <div>
-                <label htmlFor="kebutuhan" className="mb-2 block text-sm font-semibold text-gray-900">
-                  Mengapa ingin ikut workshop ini? <span className="text-red-500">*</span>
+                <label htmlFor="kebutuhan" className="mb-3 block text-base font-bold text-gray-900">
+                  Mengapa ingin ikut workshop ini? <span className="text-pink-500">*</span>
                 </label>
                 <textarea
                   id="kebutuhan"
@@ -393,16 +371,15 @@ export default function Home() {
                   required
                   value={formData.kebutuhan}
                   onChange={handleChange}
-                  rows={4}
-                  className="w-full rounded-lg border border-gray-300 bg-white px-5 py-4 text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                  rows={5}
+                  className="w-full rounded-xl border-2 border-purple-200 bg-white px-6 py-4 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100 min-h-[140px]"
                   placeholder="Ceritakan tujuan dan harapan Anda mengikuti workshop ini"
-                  style={{ minHeight: '120px' }}
                 />
               </div>
 
               {/* Saran Topik */}
               <div>
-                <label htmlFor="saranTopik" className="mb-2 block text-sm font-semibold text-gray-900">
+                <label htmlFor="saranTopik" className="mb-3 block text-base font-bold text-gray-900">
                   Saran Topik <span className="text-sm font-normal text-gray-500">(Opsional)</span>
                 </label>
                 <textarea
@@ -410,24 +387,22 @@ export default function Home() {
                   name="saranTopik"
                   value={formData.saranTopik}
                   onChange={handleChange}
-                  rows={3}
-                  className="w-full rounded-lg border border-gray-300 bg-white px-5 py-4 text-gray-900 transition-colors placeholder:text-gray-400 hover:border-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-100"
+                  rows={4}
+                  className="w-full rounded-xl border-2 border-purple-200 bg-white px-6 py-4 text-base text-gray-900 shadow-sm transition-all placeholder:text-gray-400 hover:border-purple-300 focus:border-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-100 min-h-[120px]"
                   placeholder="Topik tertentu yang ingin dipelajari"
-                  style={{ minHeight: '100px' }}
                 />
               </div>
 
-              {/* Submit Button - mt-10 (40px from last input), py-4.5 px-12, h-14 (56px), rounded-xl (12px) */}
+              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-10 h-14 w-full rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 px-16 text-base font-semibold text-white shadow-sm transition-all hover:shadow-md active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
-                style={{ minHeight: '56px', paddingTop: '18px', paddingBottom: '18px' }}
+                className="mt-10 h-16 w-full rounded-2xl bg-gradient-to-r from-pink-500 via-purple-500 to-purple-600 px-8 text-lg font-bold text-white shadow-lg shadow-purple-200/50 transition-all hover:shadow-xl hover:shadow-purple-300/60 hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
               >
                 {isSubmitting ? (
-                  <span className="flex items-center justify-center gap-2">
+                  <span className="flex items-center justify-center gap-3">
                     <svg
-                      className="h-5 w-5 animate-spin"
+                      className="h-6 w-6 animate-spin"
                       viewBox="0 0 24 24"
                       fill="none"
                     >
@@ -444,18 +419,18 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* Footer - margin bottom 24px (mb-6 after button handled above), pb-15 (60px) */}
-        <footer className="border-t border-gray-200 py-12 text-center">
-          <p className="text-sm leading-relaxed text-gray-600" style={{ lineHeight: '1.6' }}>
+        {/* Footer */}
+        <footer className="border-t border-purple-100 py-16 text-center">
+          <p className="text-base leading-relaxed text-gray-600">
             Ada pertanyaan? Hubungi kami di{' '}
             <a
               href="mailto:nadya@notion-workshop.com"
-              className="font-semibold text-purple-600 hover:text-purple-700 hover:underline"
+              className="font-bold text-purple-600 hover:text-purple-700 hover:underline"
             >
               nadya@notion-workshop.com
             </a>
           </p>
-          <p className="mt-2 text-xs leading-relaxed text-gray-400">Made with care by Nadya</p>
+          <p className="mt-3 text-sm leading-relaxed text-gray-400">Made with care by Nadya</p>
         </footer>
       </main>
     </div>
