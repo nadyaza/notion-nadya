@@ -2,32 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-
-type Registration = {
-  id: number
-  nama: string
-  email: string
-  whatsapp: string
-  institusi: string
-  kebutuhan: string
-  saranTopik: string | null
-  createdAt: Date
-}
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-}
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
+import type { Registration } from '@/lib/types'
+import { fadeInUp, staggerContainer } from '@/lib/constants'
 
 export default function RegistrationsPage() {
   const [registrations, setRegistrations] = useState<Registration[]>([])

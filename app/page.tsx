@@ -2,38 +2,13 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-}
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1 }
-}
+import type { RegistrationFormData, SubmitStatus } from '@/lib/types'
+import { fadeInUp, staggerContainer, scaleIn, learningItems, initialFormData } from '@/lib/constants'
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    nama: '',
-    email: '',
-    whatsapp: '',
-    institusi: '',
-    kebutuhan: '',
-    saranTopik: ''
-  })
+  const [formData, setFormData] = useState<RegistrationFormData>(initialFormData)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -52,14 +27,7 @@ export default function Home() {
       if (!response.ok) throw new Error('Gagal mengirim data')
 
       setSubmitStatus('success')
-      setFormData({
-        nama: '',
-        email: '',
-        whatsapp: '',
-        institusi: '',
-        kebutuhan: '',
-        saranTopik: ''
-      })
+      setFormData(initialFormData)
 
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } catch (error) {
@@ -270,12 +238,7 @@ export default function Home() {
             Apa yang Akan Dipelajari 📚
           </motion.h2>
           <div className="grid gap-7 sm:grid-cols-2">
-            {[
-              { icon: '📝', color: 'from-pink-400 to-rose-500', bg: 'from-pink-50 to-rose-50', title: 'Pengenalan Notion', desc: 'Memahami interface dan fitur dasar Notion untuk pemula' },
-              { icon: '🧱', color: 'from-purple-400 to-violet-500', bg: 'from-purple-50 to-violet-50', title: 'Blocks & Pages', desc: 'Cara membuat dan mengatur pages serta berbagai jenis blocks' },
-              { icon: '✅', color: 'from-blue-400 to-cyan-500', bg: 'from-blue-50 to-cyan-50', title: 'To-Do Lists', desc: 'Membuat daftar tugas sederhana untuk produktivitas harian' },
-              { icon: '📚', color: 'from-emerald-400 to-teal-500', bg: 'from-emerald-50 to-teal-50', title: 'Organize Notes', desc: 'Tips mengorganisir catatan dan dokumen dengan mudah' },
-            ].map((item, idx) => (
+            {learningItems.map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
