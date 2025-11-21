@@ -114,17 +114,17 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="sticky top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-xl"
       >
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 xl:px-16">
-          <div className="flex h-16 items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between gap-4">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-3"
+              className="flex items-center gap-2 sm:gap-3"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-xl shadow-lg shadow-purple-500/30">
+              <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-lg sm:text-xl shadow-lg shadow-purple-500/30">
                 📚
               </div>
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-lg font-bold text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-sm sm:text-lg font-bold text-transparent">
                 Notion Workshop
               </span>
             </motion.div>
@@ -132,18 +132,19 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="/registrations"
-              className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-purple-500/30 transition-all hover:shadow-xl hover:shadow-purple-500/40"
+              className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl"
             >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
-              Dashboard
+              <span className="hidden sm:inline">Dashboard</span>
+              <span className="sm:hidden">Data</span>
             </motion.a>
           </div>
         </div>
       </motion.header>
 
-      <main className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 xl:px-16">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Success/Error Messages */}
         <AnimatePresence mode="wait">
           {submitStatus === 'success' && (
@@ -220,16 +221,16 @@ export default function Home() {
 
           <motion.h1
             variants={fadeInUp}
-            className="mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-5xl font-black leading-tight tracking-tight text-transparent sm:text-6xl lg:text-7xl"
+            className="mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-3xl font-black leading-tight tracking-tight text-transparent sm:text-5xl lg:text-6xl px-4"
           >
-            Notion Workshop:<br />Organize Your Life
+            Notion Workshop:<br />Belajar Basic untuk Pemula
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
-            className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600 sm:text-xl"
+            className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg px-4 text-center"
           >
-            Belajar produktivitas dengan Notion dari dasar hingga mahir. Pelajari cara mengorganisir hidup, pekerjaan, dan project dengan lebih efektif.
+            Belajar Notion dari nol! Workshop ini dirancang khusus untuk pemula yang ingin memulai perjalanan produktivitas dengan Notion. Pelajari dasar-dasar dan mulai mengorganisir hidup Anda dengan lebih baik.
           </motion.p>
         </motion.div>
 
@@ -275,22 +276,22 @@ export default function Home() {
           {[
             {
               icon: '📅',
-              title: 'Schedule',
+              title: 'Jadwal',
               gradient: 'from-blue-500 to-cyan-500',
               items: [
-                { label: 'Date', value: 'TBA' },
-                { label: 'Time', value: 'TBA' },
-                { label: 'Duration', value: '2-3 hours' }
+                { label: 'Tanggal', value: 'Besok' },
+                { label: 'Waktu', value: '10:00 Pagi' },
+                { label: 'Durasi', value: '2 Jam' }
               ]
             },
             {
               icon: '📍',
-              title: 'Location',
+              title: 'Lokasi',
               gradient: 'from-green-500 to-emerald-500',
               items: [
-                { label: 'Format', value: 'Online/Hybrid' },
-                { label: 'Platform', value: 'Zoom/Google Meet' },
-                { label: 'Fee', value: 'Free/TBA' }
+                { label: 'Format', value: 'Online' },
+                { label: 'Platform', value: 'Zoom' },
+                { label: 'Biaya', value: 'Gratis!' }
               ]
             }
           ].map((card, idx) => (
@@ -327,16 +328,16 @@ export default function Home() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="mb-12 text-center text-4xl font-bold text-gray-900"
+            className="mb-12 text-center text-3xl sm:text-4xl font-bold text-gray-900 px-4"
           >
-            What You'll Learn
+            Apa yang Akan Dipelajari
           </motion.h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:gap-8 px-4">
             {[
-              { icon: '🧱', title: 'Notion Basics', desc: 'Blocks, Pages, and Database fundamentals' },
-              { icon: '⚡', title: 'Productivity Templates', desc: 'Daily tasks, notes, and project templates' },
-              { icon: '🔗', title: 'Integrations', desc: 'Connect Notion with your favorite tools' },
-              { icon: '🎨', title: 'Advanced Tips', desc: 'Custom workflows and automation' },
+              { icon: '📝', title: 'Pengenalan Notion', desc: 'Memahami interface dan fitur dasar Notion untuk pemula' },
+              { icon: '🧱', title: 'Blocks & Pages', desc: 'Cara membuat dan mengatur pages serta berbagai jenis blocks' },
+              { icon: '✅', title: 'To-Do Lists', desc: 'Membuat daftar tugas sederhana untuk produktivitas harian' },
+              { icon: '📚', title: 'Organize Notes', desc: 'Tips mengorganisir catatan dan dokumen dengan mudah' },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -376,20 +377,20 @@ export default function Home() {
           variants={staggerContainer}
           className="pb-16 lg:pb-24"
         >
-          <motion.div variants={fadeInUp} className="mb-12 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-gray-900">Register Now</h2>
-            <p className="text-lg text-gray-600">Fill out the form below to secure your spot</p>
+          <motion.div variants={fadeInUp} className="mb-12 text-center px-4">
+            <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-gray-900">Daftar Sekarang</h2>
+            <p className="text-base sm:text-lg text-gray-600">Isi form di bawah untuk mengamankan tempat Anda</p>
           </motion.div>
 
           <motion.form
             variants={fadeInUp}
             onSubmit={handleSubmit}
-            className="space-y-6 rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl lg:p-12"
+            className="mx-auto max-w-3xl space-y-6 rounded-3xl border border-gray-100 bg-white p-6 shadow-2xl sm:p-8 lg:p-12"
           >
             {/* Nama */}
             <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2 }}>
               <label htmlFor="nama" className="mb-2 block text-sm font-semibold text-gray-900">
-                Full Name <span className="text-red-500">*</span>
+                Nama Lengkap <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -399,7 +400,7 @@ export default function Home() {
                 value={formData.nama}
                 onChange={handleChange}
                 className="w-full rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-gray-300 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-purple-500/20"
-                placeholder="John Doe"
+                placeholder="Nama Anda"
               />
             </motion.div>
 
@@ -417,7 +418,7 @@ export default function Home() {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-gray-300 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-purple-500/20"
-                  placeholder="john@example.com"
+                  placeholder="email@contoh.com"
                 />
               </motion.div>
 
@@ -441,7 +442,7 @@ export default function Home() {
             {/* Institusi */}
             <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2 }}>
               <label htmlFor="institusi" className="mb-2 block text-sm font-semibold text-gray-900">
-                Institution / Company <span className="text-red-500">*</span>
+                Institusi / Perusahaan <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -451,14 +452,14 @@ export default function Home() {
                 value={formData.institusi}
                 onChange={handleChange}
                 className="w-full rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-gray-300 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-purple-500/20"
-                placeholder="University, school, or company name"
+                placeholder="Universitas, sekolah, atau nama perusahaan"
               />
             </motion.div>
 
             {/* Kebutuhan */}
             <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2 }}>
               <label htmlFor="kebutuhan" className="mb-2 block text-sm font-semibold text-gray-900">
-                Why do you want to join? <span className="text-red-500">*</span>
+                Mengapa ingin ikut workshop ini? <span className="text-red-500">*</span>
               </label>
               <textarea
                 id="kebutuhan"
@@ -468,14 +469,14 @@ export default function Home() {
                 onChange={handleChange}
                 rows={4}
                 className="w-full rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-gray-300 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-purple-500/20"
-                placeholder="Tell us what you want to learn or achieve..."
+                placeholder="Ceritakan apa yang ingin Anda pelajari atau capai..."
               />
             </motion.div>
 
             {/* Saran Topik */}
             <motion.div whileHover={{ scale: 1.01 }} transition={{ duration: 0.2 }}>
               <label htmlFor="saranTopik" className="mb-2 block text-sm font-semibold text-gray-900">
-                Topic Suggestions <span className="text-gray-400">(Optional)</span>
+                Saran Topik <span className="text-gray-400">(Opsional)</span>
               </label>
               <textarea
                 id="saranTopik"
@@ -484,7 +485,7 @@ export default function Home() {
                 onChange={handleChange}
                 rows={3}
                 className="w-full rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all placeholder:text-gray-400 hover:border-gray-300 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-purple-500/20"
-                placeholder="What topics would you like to learn?"
+                placeholder="Topik apa yang ingin Anda pelajari?"
               />
             </motion.div>
 
@@ -494,7 +495,7 @@ export default function Home() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isSubmitting}
-              className="group relative mt-8 w-full overflow-hidden rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 text-lg font-bold text-white shadow-2xl shadow-purple-500/50 transition-all hover:shadow-purple-500/60 disabled:cursor-not-allowed disabled:opacity-50"
+              className="group relative mt-8 w-full overflow-hidden rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-4 text-base sm:text-lg font-bold text-white shadow-lg hover:shadow-xl transition-all disabled:cursor-not-allowed disabled:opacity-50"
             >
               <span className="relative z-10 flex items-center justify-center gap-3">
                 {isSubmitting ? (
@@ -508,11 +509,11 @@ export default function Home() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                     </motion.svg>
-                    Submitting...
+                    Mengirim...
                   </>
                 ) : (
                   <>
-                    Submit Registration
+                    Daftar Workshop
                     <motion.svg
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
@@ -541,16 +542,16 @@ export default function Home() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="border-t border-gray-200 py-12 text-center"
+          className="border-t border-gray-200 py-12 text-center px-4"
         >
-          <p className="text-gray-600">
-            Questions? Contact us at{' '}
+          <p className="text-sm sm:text-base text-gray-600">
+            Ada pertanyaan? Hubungi kami di{' '}
             <motion.a
               whileHover={{ scale: 1.05 }}
-              href="mailto:hello@notion-workshop.com"
+              href="mailto:nadya@notion-workshop.com"
               className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text font-semibold text-transparent hover:underline"
             >
-              hello@notion-workshop.com
+              nadya@notion-workshop.com
             </motion.a>
           </p>
         </motion.div>
